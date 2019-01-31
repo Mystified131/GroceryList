@@ -272,34 +272,31 @@ namespace MVCApplication.Controllers
             {
                 SortViewModel sortViewModel = new SortViewModel();
 
-                List<double> Bridgelist = new List<double>();
-                Dictionary<double, string> Bridgedict = new Dictionary<double, string>();
-                Dictionary<string, double> Bridgedict2 = new Dictionary<string, double>();
+                List<KeyValuePair<string, double>> Bridgelist = new List<KeyValuePair<string, double>> ();
+                Dictionary<string, double> Bridgedict = new Dictionary<string, double>();
                 foreach (KeyValuePair<string, double> item in TheDictionary)
                 {
 
                     
-                    Bridgedict.Add(item.Value, item.Key);
+                    Bridgelist.Add(item);
+                    
                    
                 }
 
-                foreach (KeyValuePair<double, string> item in Bridgedict)
+                Bridgelist = Bridgelist.OrderBy(x => x.Value).ToList();
+
+
+
+                foreach (KeyValuePair<string, double> item in Bridgelist)
                 {
-                    Bridgelist.Add(item.Key);
+
+                    Bridgedict.Add(item.Key, item.Value);
 
                
                 }
 
-                Bridgelist.Sort();
-
-                foreach(double item in Bridgelist)
-                {
-
-                    Bridgedict2.Add(Bridgedict[item], item);
-
-                }
-
-                sortViewModel.Sortdict = Bridgedict2;
+     
+                sortViewModel.Sortdict = Bridgedict;
 
                 return View(sortViewModel);
             }
