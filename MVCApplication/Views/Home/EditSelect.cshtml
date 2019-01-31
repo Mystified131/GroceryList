@@ -1,0 +1,24 @@
+﻿@model MVCApplication.ViewModels.EditSelectViewModel
+
+@{
+    ViewData["Title"] = "Select Item To Edit";
+}
+
+<h2>Select Item To Edit</h2>
+
+<div>
+    <form action='EditSelect' method='POST' align="left">
+        <label>
+            Which item would you like to edit?
+        </label><br><br />
+        <select name="NewElement1">
+            @foreach (KeyValuePair<string, double> item in Model.TheDictionary)
+            {
+                <option value=@item.Key>@item.Key</option>}
+        </select>
+
+        <br /><br />
+        <input type="submit" value="Edit Item" />
+    </form>
+</div>
+

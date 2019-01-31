@@ -1,0 +1,23 @@
+﻿@model MVCApplication.ViewModels.RemoveViewModel
+
+@{
+    ViewData["Title"] = "Remove";
+}
+
+<h2>Remove Item From Grocery List</h2>
+
+<div>
+    <form action='Remove' method='POST' align="left">
+        <label>
+            Which specific item would you like to delete?
+        </label><br><br />
+        <select name="NewElement1">
+            @foreach (KeyValuePair<string, double> item in Model.TheDictionary)
+            {
+                <option value=@item.Key>@item.Key</option>}
+        </select>
+
+        <br /><br />
+        <input type="submit" value="Remove Item" />
+    </form>
+</div>

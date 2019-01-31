@@ -1,0 +1,19 @@
+﻿@model MVCApplication.ViewModels.ResultViewModel
+
+@{
+    ViewData["Title"] = "Result";
+}
+
+<h2>Grocery List</h2>
+
+<br />
+
+<ul>
+    @foreach (KeyValuePair<string, double> item in Model.TheDictionary)
+    {
+
+        <li>@item.Key : @item.Value</li>
+
+
+    }
+</ul>

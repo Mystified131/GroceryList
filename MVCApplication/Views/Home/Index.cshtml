@@ -1,0 +1,24 @@
+﻿@model MVCApplication.ViewModels.IndexViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Add Item To Grocery List</h2>
+
+<form action='Home/Result' method='POST' align="left">
+    <label>
+        Please enter a new item for the list:
+    </label><br><br>
+    <input name="NewElement1" type="text" value="" />
+    <br /><br />
+    <label>
+        Please enter an approximate price for the item. Please enter the number, with no '$' sign:
+    </label><br><br>
+    <input name="NewElement2" type="text" value="" />
+    <br /><br />
+    <input type="submit" value="Add Entry" />
+
+</form>
+
+<p>@ViewBag.error</p>

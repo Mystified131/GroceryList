@@ -1,0 +1,19 @@
+﻿
+@model MVCApplication.ViewModels.SearchSelectViewModel
+
+@{
+    ViewData["Title"] = "Search Select";
+}
+
+<h2>Search</h2>
+
+<form action='SearchSelect' method='POST' align="left">
+    <label>
+        Please enter a string for which to search. Only the item names will be searched, not their value(s):
+    </label><br><br>
+    <input name="Searchstr" type="text" value="" />
+    <br /><br />
+    <input type="submit" value="Choose Search" />
+
+</form>
+

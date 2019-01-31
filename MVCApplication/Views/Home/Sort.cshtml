@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "Sort";
+}
+
+<h2>Sorted By Item</h2>
+
+<br />
+
+
+<ul>
+    @foreach (KeyValuePair<string, double> item in Model.Sortdict)
+    {
+
+        <li>@item.Key : @item.Value</li>
+
+
+    }
+</ul>
+

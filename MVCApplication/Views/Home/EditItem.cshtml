@@ -1,0 +1,17 @@
+﻿@model MVCApplication.ViewModels.EditItemViewModel
+
+@{
+    ViewData["Title"] = "Edit Item";
+}
+
+<h2>Edit Item Cost</h2>
+
+<form action='EditItem' method='POST' align="left">
+    <label>
+        Please enter an new possible cost for this item:
+    </label><br><br>
+    <input name="NewElement2" type="text" default ="@ViewBag.value" value="@ViewBag.value" />
+    <br /><br />
+    <input type="submit" value="Edit Item" />
+
+</form>
