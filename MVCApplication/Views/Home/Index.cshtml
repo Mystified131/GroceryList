@@ -4,11 +4,17 @@
     ViewData["Title"] = "Index";
 }
 
+<div align="center">
+    <img src="~/images/cart.png" />
+</div>
+
+<br /><br />
+
 <h2>Add Item To Grocery List</h2>
 
 <form action='Home/Result' method='POST' align="left">
     <label>
-        Please enter a new item for the list:
+        Please enter a new item for the list. If the item has the same name as another, it will cause an error:
     </label><br><br>
     <input name="NewElement1" type="text" value="" />
     <br /><br />

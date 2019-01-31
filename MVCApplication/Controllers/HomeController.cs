@@ -56,6 +56,15 @@ namespace MVCApplication.Controllers
         public IActionResult Result(ResultViewModel resultViewModel)
 
         {
+            if (TheDictionary.ContainsKey(resultViewModel.NewElement1))
+            {
+
+                return Redirect("/Home/Error");
+
+            }
+
+
+
             if (ModelState.IsValid)
             {
 
